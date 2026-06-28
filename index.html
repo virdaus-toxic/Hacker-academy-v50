@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hacker Academy V50 | Bang Guru</title>
+  <style>
+    :root { --bg:#0a0a0a; --card:#111; --text:#00ff41; --blue:#38bdf8; --red:#dc2626; --wa:#25D366; }
+    *{box-sizing:border-box}
+    body { font-family: 'Courier New', monospace; margin: 0; background: var(--bg); color: var(--text); }
+    header { background: linear-gradient(90deg,#111,#1a1a1a); border-bottom: 2px solid var(--blue); padding: 15px 20px; text-align: center; }
+    header h1 { margin: 0; color: var(--blue); font-size: 24px; letter-spacing: 2px; }
+    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    .card { background: var(--card); border: 1px solid var(--text); padding: 20px; border-radius: 14px; margin-bottom: 20px; box-shadow: 0 0 12px #00ff4130; }
+    pre { background: #000; padding: 12px; border-radius: 8px; overflow-x: auto; color: #a3e635; border-left: 3px solid var(--blue); font-size: 15px; }
+    img { width: 100%; border-radius: 12px; margin: 15px 0; border: 1px solid #333; }
+    .red-box { background: var(--red); color: #fff; padding: 25px; text-align: center; border-radius: 12px; font-size: 22px; font-weight: bold; margin: 15px 0; }
+    .wa-box { background: var(--wa); color: #000; padding: 18px; text-align: center; border-radius: 12px; font-size: 18px; font-weight: bold; margin-top: 20px; }
+    .wa-box a { color: #000; text-decoration: none; }
+    .nav { text-align: center; margin: 20px 0; display: flex; justify-content: center; align-items: center; gap: 12px; }
+    .nav a { color: var(--blue); text-decoration: none; font-size: 18px; padding: 10px 18px; border: 1px solid var(--blue); border-radius: 8px; transition: 0.2s; }
+    .nav a:hover { background: var(--blue); color: #000; }
+    ul { text-align: left; font-size: 16px; line-height: 1.8; }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 15px; }
+    td, th { border: 1px solid var(--text); padding: 10px; text-align: left; }
+    footer { text-align: center; padding: 20px; color: #666; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>💻 HACKER ACADEMY V50 💻</h1>
+  </header>
+  <div class="container" id="app"></div>
+  <footer>© 2026 Hacker Academy | Dibuat pake HTML doang</footer>
+
+  <script>
+    // === GANTI NOMER WA LU DI SINI PAKAI 62812... TANPA + ===
+    const WA_NUM = "628131336963"; 
+    const WA_LINK = `https://wa.me/${WA_NUM}?text=Halo%20Bang%20Mau%20Lapor%20Bug/Website%20Jelek`;
+
+    // === 50 HALAMAN ISI KOMPLIT ===
+    const pages = [
+      // 1-10 CODING
+      { title: "Hal 1: If = Kalau", img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=900", content: `<p>If = Kalo kondisinya bener, maka jalan.</p><pre>umur = 15\nif umur >= 13:\n  print("Boleh belajar coding")</pre>` },
+      { title: "Hal 2: While = Selama", img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=900", content: `<p>While = Selama bener, ulang terus.</p><pre>i = 1\nwhile i <= 3:\n  print("Angka:", i)\n  i += 1</pre>` },
+      { title: "Hal 3: For Loop", img: "", content: `<pre>for i in range(5):\n  print(i)</pre>` },
+      { title: "Hal 4: List Python", img: "", content: `<pre>data = ["virus", "malware", "hacker"]\nprint(data[1]) # output: malware</pre>` },
+      { title: "Hal 5: Function", img: "", content: `<pre>def sapa(nama):\n  print("Halo", nama)\nsapa("Bang")</pre>` },
+      { title: "Hal 6: Input Output", img: "", content: `<pre>nama = input("Nama kamu? ")\nprint("Halo", nama)</pre>` },
+      { title: "Hal 7: Try Except", img: "", content: `<pre>try:\n  x = 10 / 0\nexcept:\n  print("Error ketangkep, aman")</pre>` },
+      { title: "Hal 8: Komentar", img: "", content: `<pre># Ini komentar, gak dibaca kode\nprint("OK")</pre>` },
+      { title: "Hal 9: Operator", img: "", content: `<pre>a = 10\nb = 3\nprint(a+b, a-b, a*b, a/b)</pre>` },
+      { title: "Hal 10: Mini Project", img: "", content: `<pre>a = int(input("A:"))\nb = int(input("B:"))\nprint("Hasil:", a+b)</pre>` },
+
+      // 11-20 AI
+      { title: "Hal 11: AI Sapa Nama", img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900", content: `<pre>nama = input("Namamu? ")\nprint("Halo AI nyapa:", nama)</pre>` },
+      { title: "Hal 12: AI Tebak Angka", img: "", content: `<pre>import random\nx = random.randint(1,5)\nif int(input("Tebak 1-5:")) == x:\n  print("Menang!")</pre>` },
+      { title: "Hal 13: AI Chatbot", img: "", content: `<pre>chat = input("Chat: ")\nif chat == "halo":\n  print("Halo juga bang")</pre>` },
+      { title: "Hal 14: AI Kuis", img: "", content: `<pre>if input("1+1=? ") == "2":\n  print("Pinter")\nelse:\n  print("Belajar lagi")</pre>` },
+      { title: "Hal 15: AI Simpan Data", img: "", content: `<pre>riwayat = []\nriwayat.append(input("Ketik:"))\nprint(riwayat)</pre>` },
+      { title: "Hal 16: AI Filter", img: "", content: `<pre>kata = input("Ketik: ")\nif "hacker" in kata:\n  print("Ketemu kata hacker")</pre>` },
+      { title: "Hal 17: AI Random", img: "", content: `<pre>import random\nprint(random.choice(["AI","Bot","Hacker"]))</pre>` },
+      { title: "Hal 18: AI Hitung", img: "", content: `<pre>teks = input("Ketik: ")\nprint("Panjang:", len(teks))</pre>` },
+      { title: "Hal 19: AI Balik Kata", img: "", content: `<pre>kata = input("Ketik: ")\nprint(kata[::-1])</pre>` },
+      { title: "Hal 20: AI Gabungan", img: "", content: `<p>Gabungin semua AI tadi jadi 1 bot lengkap. Ini dasar AI.</p>` },
+
+      // 21-30 CYBER
+      { title: "Hal 21: Cek Password", img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900", content: `<pre>pw = "1234"\nif len(pw) < 8:\n  print("Lemah! Gampang dihack")</pre>` },
+      { title: "Hal 22: Phising", img: "", content: `<p>Link palsu mirip FB/Gmail buat nyuri password. Jangan klik!</p>` },
+      { title: "Hal 23: Firewall", img: "", content: `<p>Tembok gembok yang nyaring koneksi masuk ke komputer.</p>` },
+      { title: "Hal 24: 2FA", img: "", content: `<p>Password + Kode OTP dari HP = Aman x2</p>` },
+      { title: "Hal 25: Enkripsi", img: "", content: `<pre>print(chr(ord("a")+1)) # a jadi b</pre>` },
+      { title: "Hal 26: SQL Injection", img: "", content: `<p>Jangan masukin input user mentah ke database. Bahaya!</p>` },
+      { title: "Hal 27: VPN", img: "", content: `<p>Terowongan rahasia biar IP & data lu aman.</p>` },
+      { title: "Hal 28: Update Software", img: "", content: `<p>Update = Tutup celah yang dipake hacker masuk.</p>` },
+      { title: "Hal 29: Backup", img: "", content: `<p>Backup data biar gak nangis kena ransomware.</p>` },
+      { title: "Hal 30: White Hat", img: "", content: `<p>White Hat = Hacker baik. Bantu perusahaan jaga keamanan. Legal.</p>` },
+
+      // 31-40 MALWARE WAJIB ADA "-"
+      { title: "Hal 31: Apa itu Malware", img: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=900", content: `<p><b>Malware</b> = Software jahat yang ngerusak.</p><ul>
+      <li>- Trojan: Mengendalikan komputer/HP kita dari jauh</li>
+      <li>- Ransomware: Kunci semua file minta tebusan</li>
+      <li>- Spyware: Ngintip semua yang lu ketik & lihat</li></ul>` },
+      { title: "Hal 32: Trojan", img: "", content: `<ul><li>- Pura-pura aplikasi game/mod normal</li><li>- Diam-diam buka pintu belakang</li></ul>` },
+      { title: "Hal 33: Ransomware", img: "", content: `<ul><li>- Enkripsi semua foto & dokumen</li><li>- Minta bayar pakai bitcoin</li></ul>` },
+      { title: "Hal 34: Spyware", img: "", content: `<ul><li>- Rekam layar & keyboard</li><li>- Kirim data ke server hacker</li></ul>` },
+      { title: "Hal 35: Worm", img: "", content: `<ul><li>- Nyebar sendiri lewat wifi/jaringan</li><li>- Nularin ke device lain tanpa klik</li></ul>` },
+      { title: "Hal 36: Adware", img: "", content: `<ul><li>- Iklan muncul terus menerus</li><li>- Bikin HP/laptop lemot parah</li></ul>` },
+      { title: "Hal 37: Keylogger", img: "", content: `<ul><li>- Catat semua tombol keyboard</li><li>- Password & no kartu ketauan</li></ul>` },
+      { title: "Hal 38: Rootkit", img: "", content: `<ul><li>- Sembunyi paling dalam di sistem</li><li>- Susah banget dibasmi antivirus</li></ul>` },
+      { title: "Hal 39: Botnet", img: "", content: `<ul><li>- Ribuan device jadi zombie</li><li>- Dipake buat nyerang web DDoS</li></ul>` },
+      { title: "Hal 40: Cara Kerja Malware", img: "", content: `<p>Urutan: 1. Masuk lewat file/klik 2. Sembunyi 3. Ngendaliin 4. Nyebar</p>` },
+
+      // 41-50 HACKER + BLACK HAT + WA
+      { title: "Hal 41: Black Hat", img: "", content: `<p><b>Black Hat</b> = Hacker jahat. Tujuan: nyuri, ngerusak, minta duit.</p>
+      <div class="red-box">CARA MENGHINDARI BLACK HAT
+      <p style="font-size:15px; font-weight:normal;">- Jangan download aplikasi crack/bajakan<br>- Cek izin aplikasi sebelum install<br>- Pakai antivirus & firewall aktif</p></div>` },
+      { title: "Hal 42: Semua Jenis Hacker", img: "https://images.unsplash.com/photo-1629904869391-5fcb0e0f8b04?w=900", content: `<table><tr><th>Jenis</th><th>Topi</th><th>Tujuan</th></tr>
+      <tr><td>White Hat</td><td>Putih</td><td>Bantu amankan sistem, legal, dibayar</td></tr>
+      <tr><td>Black Hat</td><td>Hitam</td><td>Ngerusak, nyuri data, ilegal</td></tr>
+      <tr><td>Grey Hat</td><td>Abu</td><td>Nemu celah, kadang lapor kadang jual</td></tr>
+      <tr><td>Red Hat</td><td>Merah</td><td>Pemburu Black Hat, serang balik</td></tr>
+      <tr><td>Blue Hat</td><td>Biru</td><td>Tester keamanan sebelum rilis app</td></tr>
+      <tr><td>Green Hat</td><td>Hijau</td><td>Pemula baru belajar hacker</td></tr></table>` },
+      { title: "Hal 43: Etika Hacker", img: "", content: `<p>Aturan main: 1. Izin dulu 2. Jangan ngerusak 3. Laporin celah 4. Jaga data orang</p>` },
+      { title: "Hal 44: Nmap Dasar", img: "", content: `<p>Nmap = Tools buat scan port terbuka di jaringan target.</p>` },
+      { title: "Hal 45: Password Manager", img: "", content: `<p>1 password master kuat buat nyimpen semua password lain.</p>` },
+      { title: "Hal 46: Cek Link", img: "", content: `<pre>link = input("Link: ")\nif "bit.ly" in link:\n  print("Curiga! Bisa phising")</pre>` },
+      { title: "Hal 47: Log File", img: "", content: `<p>Log = Catatan jejak digital siapa aja yang masuk ke sistem.</p>` },
+      { title: "Hal 48: Jaga Privasi", img: "", content: `<p>Jangan share KTP, foto rumah, lokasi live di internet.</p>` },
+      { title: "Hal 49: Lapor Bug", img: "", content: `<p>Nemu bug/website jelek? Langsung lapor ke owner biar dibenerin.</p>` },
+      { title: "Hal 50: CARA MENGHINDARI HACKER", img: "", content: `<div class="red-box">CARA MENGHINDARI HACKER
+      <p style="font-size:15px; font-weight:normal;">- Password 12+ karakter + angka + simbol<br>- Aktifkan 2FA di semua akun penting<br>- Jangan klik link dari orang gak kenal<br>- Update HP & Laptop terus</p></div>` },
+    ];
+
+    // === RENDER HALAMAN ===
+    const params = new URLSearchParams(window.location.search);
+    let page = parseInt(params.get('page')) || 1;
+    if(page < 1) page = 1;
+    if(page > pages.length) page = pages.length;
+    
+    const p = pages[page-1];
+    let html = `<div class="card"><h2>${p.title}</h2>`;
+    if(p.img) html += `<img src="${p.img}" alt="gambar">`;
+    html += `${p.content}`;
+
+    // === WA BOX ADA DI TIAP HALAMAN ===
+    html += `<div class="wa-box">🚨 Nemu Bug / Website Jelek? <br><a href="${WA_LINK}" target="_blank">Lapor WA: ${WA_NUM}</a></div>`;
+    html += `</div>`;
+
+    // === NAV 1 TOMBOL DOANG, GAK DOBEL ===
+    html += `<div class="nav">`;
+    if(page > 1) html += `<a href="?page=${page-1}">⬅️ Prev</a>`;
+    html += `<span>Hal ${page}/${pages.length}</span>`;
+    if(page < pages.length) html += `<a href="?page=${page+1}">Next ➡️</a>`; // <-- CUMA 1 KALI
+    html += `</div>`;
+
+    document.getElementById('app').innerHTML = html;
+  </script>
+</body>
+</html>
